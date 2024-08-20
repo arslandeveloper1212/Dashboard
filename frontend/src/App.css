@@ -82,6 +82,8 @@
 .control-overwidth {
   width: 100% !important;
   gap: 20px;
+  background-color: #F3F3F1 !important;
+  margin-top: 50px !important;
 }
 
 .btn-grey {
@@ -186,6 +188,11 @@
   display: block;
 }
 
+.csas{
+  background-color: white;
+    padding: 33px;
+}
+
 .row .ftta {
   display: flex;
   justify-content: flex-end;
@@ -222,6 +229,7 @@
   flex-direction: column;
   gap: 7px;
   width: 12% !important;
+  padding-right: 20px;
 }
 
 #root > div > div.flex-grow-1 > div > div > div > div > div.row.g-3 > div.col-md-6.col-lg-6.col-12.d-flex.flex-column > div.pie-chart-container.d-flex.justify-content-center.mb-3 > div > div > svg{
@@ -233,6 +241,33 @@
   font-size: 30px;
     font-weight: bold;
 }
+
+.icon-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white; 
+}
+
+
+.icon-circle::before {
+  content: '';
+  position: absolute;
+  top: -2px; 
+  left: -2px;
+  right: -2px; 
+  bottom: -2px; 
+  border-radius: 50%;
+  background: linear-gradient(90deg, rgba(179,81,236,1) 0%, rgba(242,76,76,1) 85%, rgba(210,78,157,2) 100%);
+  z-index: -1; 
+}
+
+
+
 
 @media screen and (max-width: 1300px) {
   .form-select-csrp{
@@ -362,12 +397,13 @@
 @media screen and (max-width: 768px) {
   .cpst {
     position: absolute;
-    right: 9px !important;
+    right: 12px !important;
     top: 402px !important;
     display: flex;
     flex-direction: column;
     gap: 7px;
     width: 12% !important;
+    padding: 0px;
 }
 .btty{
 flex-direction: column !important;

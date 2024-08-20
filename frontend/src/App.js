@@ -31,6 +31,7 @@ import BillingDashboardAdmin from './pages/Admin/BillingDashboardAdmin';
 import Login from './pages/Login';
 
 
+
 function App() {
   return (
     <Routes>
@@ -41,6 +42,7 @@ function App() {
       <Route path="/" element={<ClientLayout />}>
         {/* Default route for client */}
         <Route index element={<Navigate to="/home" />} />
+       
         <Route path="/home" element={<Home />} />
         <Route path="/create-customer" element={<CreateCustomer />} />
         <Route path="/activity-log" element={<ActivityLog />} />

@@ -33,8 +33,8 @@ const customTicks = [250, 500, 1000, 2000, 3000, 4000, 5000, 10000, 20000, 30000
 
 const Dashboard = () => {
     return (
-        <div className="container-fluid my-4">
-            <div className="row g-3" style={{ position: "relative", top: "-13px" }}>
+        <div className="container-fluid my-4" style={{backgroundColor:"#F3F3F1",boxShadow: "rgba(100, 100, 111, 0.2)"}}>
+            <div className="row g-3" style={{ position: "relative", top: "-13px",backgroundColor:"white",padding:"10px 20px" }}>
                 {/* Cards Section */}
                 <div className="col-md-6 col-lg-6 col-12" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
                     <div className="row row-cols-1 g-3">
@@ -155,7 +155,7 @@ const Dashboard = () => {
 
 
             {/* Bar Chart Section */}
-            <div className="row mt-4">
+            <div className="row mt-4 csas">
                 <div className='d-flex justify-content-between align-items-center'>
 
                     <h2>Premium Details</h2>

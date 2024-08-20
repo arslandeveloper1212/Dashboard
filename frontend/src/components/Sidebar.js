@@ -6,6 +6,7 @@ import MobSidebar from './MobSidebar';
 import './Sidebar.css'; // Import the CSS file
 import '../App.css'
 
+
 const Sidebar = () => {
   const [activeFolder, setActiveFolder] = useState(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 992);
@@ -33,14 +34,17 @@ const Sidebar = () => {
 
   return (
     <div className="sidebar-container">
-      <div className="custom-width-first" style={{ backgroundColor: "#d9d9d9", height: "100vh", position: "relative", top: "-20px" }}>
-        <div className='broker-content'>
+      <div className="custom-width-first" style={{ backgroundColor: "white", height: "100vh", position: "relative", top: "-20px",boxShadow: "rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px", zIndex:"2"
+       }}>
+        <div className='broker-content' >
           <img src={img} alt="Logo" />
           <div className='d-flex flex-column'>
             <span>{data.top.logo.leftText}</span>
             <strong>{data.top.logo.rightText}</strong>
           </div>
+          
         </div>
+      
         <div style={{ marginTop: "20px" }}>
           {data.home.folders.map((folder, folderIndex) => (
             <div key={folderIndex} className={`folder-container ${activeFolder === folderIndex ? 'active' : ''}`}>
