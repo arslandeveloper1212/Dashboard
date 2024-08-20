@@ -1,0 +1,63 @@
+[
+    {
+      "id": 1,
+      "PolicyName": "Policy A",
+      "ImpDetails": "Details A",
+      "status": "Active"
+    },
+    {
+      "id": 2,
+      "PolicyName": "Policy B",
+      "ImpDetails": "Details B",
+      "status": "Inactive"
+    },
+    {
+      "id": 3,
+      "PolicyName": "Policy C",
+      "ImpDetails": "Details C",
+      "status": "Active"
+    },
+    {
+      "id": 4,
+      "PolicyName": "Policy D",
+      "ImpDetails": "Details D",
+      "status": "Active"
+    },
+    {
+      "id": 5,
+      "PolicyName": "Policy E",
+      "ImpDetails": "Details E",
+      "status": "Inactive"
+    },
+    {
+      "id": 6,
+      "PolicyName": "Policy F",
+      "ImpDetails": "Details F",
+      "status": "Active"
+    },
+    {
+      "id": 7,
+      "PolicyName": "Policy G",
+      "ImpDetails": "Details G",
+      "status": "Inactive"
+    },
+    {
+      "id": 8,
+      "PolicyName": "Policy H",
+      "ImpDetails": "Details H",
+      "status": "Active"
+    },
+    {
+      "id": 9,
+      "PolicyName": "Policy I",
+      "ImpDetails": "Details I",
+      "status": "Active"
+    },
+    {
+      "id": 10,
+      "PolicyName": "Policy J",
+      "ImpDetails": "Details J",
+      "status": "Inactive"
+    }
+  ]
+  

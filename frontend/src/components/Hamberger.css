@@ -1,0 +1,72 @@
+/* styles.css */
+
+/* Default styles for desktop view */
+.sidebar {
+    background-color: #d9d9d9;
+    height: 99vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    transition: transform 0.3s ease;
+  }
+  
+  .sidebar.hidden {
+    transform: translateX(-100%);
+  }
+  
+  .sidebar-content {
+    padding: 20px;
+  }
+  
+  .folder-container {
+    margin-bottom: 20px;
+  }
+  
+  .folder-container.active ul {
+    display: block;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin: 10px 0;
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 100%;
+      transform: translateX(-100%);
+      z-index: 1000;
+    }
+  
+    .sidebar.show {
+      transform: translateX(0);
+    }
+  
+    .menu-button {
+      display: block;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+  
+    .sidebar-content {
+      padding: 20px;
+      overflow-y: auto;
+    }
+  }
+  

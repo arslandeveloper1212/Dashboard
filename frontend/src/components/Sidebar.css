@@ -1,0 +1,43 @@
+/* Sidebar.css */
+
+/* Style for menu and close buttons */
+.menu-button, .close-button {
+    position: fixed;
+    top: 10px;
+    font-size: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1000; /* Ensure buttons are clickable */
+  }
+  
+  .menu-button {
+    right: 10px; /* Position of the menu button */
+  }
+  
+  .close-button {
+    left: 208px;
+  }
+  
+  /* Sidebar visibility */
+  .sidebar-hidden {
+    display: none;
+  }
+  
+  /* Style for the sidebar */
+  .sidebar-content {
+    width: 250px; /* Adjust the width as needed */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: rgb(217, 217, 217);
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+    z-index: 4 !important;
+  }
+  
+  .sidebar-hidden {
+    transform: translateX(-100%); /* Move sidebar off-screen when hidden */
+  }
+  

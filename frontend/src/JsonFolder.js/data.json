@@ -1,0 +1,23 @@
+[
+    { "id": 1, "name": "John Doe","nationality":"Thai","insurer":"KSLI", "policy": "Policy A", "status": "Active" },
+    { "id": 2, "name": "Jane Smith","nationality":"Thai","insurer":"KSLI", "policy": "Policy B", "status": "Inactive" },
+    { "id": 3, "name": "Alice Johnson","nationality":"Thai","insurer":"KSLI", "policy": "Policy C", "status": "Active" },
+    { "id": 4, "name": "Bob Brown", "nationality":"Thai","insurer":"KSLI","policy": "Policy D", "status": "Active" },
+    { "id": 5, "name": "Eve Green","nationality":"Thai","insurer":"KSLI", "policy": "Policy E", "status": "Inactive" },
+    { "id": 6, "name": "Charlie White","nationality":"Thai","insurer":"KSLI", "policy": "Policy F", "status": "Active" },
+    { "id": 7, "name": "Grace Lee","nationality":"Thai","insurer":"KSLI", "policy": "Policy G", "status": "Inactive" },
+    { "id": 8, "name": "Henry Davis","nationality":"Thai","insurer":"KSLI", "policy": "Policy H", "status": "Active" },
+    { "id": 9, "name": "Olivia Moore","nationality":"Thai","insurer":"KSLI", "policy": "Policy I", "status": "Active" },
+    { "id": 10, "name": "William Wilson","nationality":"Thai","insurer":"KSLI", "policy": "Policy J", "status": "Inactive" },
+    { "id": 11, "name": "Sophia Martinez","nationality":"Thai","insurer":"KSLI", "policy": "Policy K", "status": "Active" },
+    { "id": 12, "name": "Liam Anderson","nationality":"Thai","insurer":"KSLI", "policy": "Policy L", "status": "Active" },
+    { "id": 13, "name": "Emma Hernandez","nationality":"Thai","insurer":"KSLI", "policy": "Policy M", "status": "Inactive" },
+    { "id": 14, "name": "James Gonzalez","nationality":"Thai","insurer":"KSLI", "policy": "Policy N", "status": "Active" },
+    { "id": 15, "name": "Ava Perez","nationality":"Thai","insurer":"KSLI", "policy": "Policy O", "status": "Active" },
+    { "id": 16, "name": "Logan Ramirez","nationality":"Thai","insurer":"KSLI", "policy": "Policy P", "status": "Inactive" },
+    { "id": 17, "name": "Mia Flores","nationality":"Thai","insurer":"KSLI", "policy": "Policy Q", "status": "Active" },
+    { "id": 18, "name": "Noah Cruz","nationality":"Thai","insurer":"KSLI", "policy": "Policy R", "status": "Active" },
+    { "id": 19, "name": "Isabella Rivera","nationality":"Thai","insurer":"KSLI", "policy": "Policy S", "status": "Inactive" },
+    { "id": 20, "name": "Elijah Torres","nationality":"Thai","insurer":"KSLI", "policy": "Policy T", "status": "Active" }
+  ]
+  

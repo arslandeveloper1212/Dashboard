@@ -1,0 +1,5 @@
+[
+    { "id": 3252, "name": "John Doe","email":"Thai@gmail.com","phone":"KSLI", "type": "Policy A", "status": "Active" },
+    { "id": 3253, "name": "John Doe","email":"Thai","phone":"KSLI", "type": "Policy A", "status": "Active" }
+
+]

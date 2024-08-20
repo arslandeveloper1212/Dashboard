@@ -1,0 +1,1479 @@
+{
+	"info": {
+		"_postman_id": "3c679a99-4480-49dd-8103-c2e5a914d938",
+		"name": "InstlyCRM_Collection",
+		"description": "API Collection for Insurance CRM with Broker and Admin functionalities",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17889600"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"{{email}}\",\r\n    \"password\": \"{{password}}\"\r\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"shah@instlytechnologies.com\"\r\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/forgot-password",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"current_password\": \"Shah#12\",\r\n  \"new_password\": \"Shah#123\"\r\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/reset-password",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Invoices",
+					"item": [
+						{
+							"name": "Get All Invoices",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJ1c2VybmFtZSI6ImFkbWluIiwidHlwZSI6IkFkbWluIiwiaWF0IjoxNzIyNTg1NDg4LCJleHAiOjE3MjI2NzE4ODh9.I3RltcER-y7RZ67KOnYoPveQa5bTKKE-Ex5ZPiigG_M",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/admin/invoices",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"invoices"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get All Invoices",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}"
+											}
+										],
+										"url": {
+											"raw": "{{base_url}}/admin/invoices",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"admin",
+												"invoices"
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n  \"status\": \"success\",\r\n  \"data\": [\r\n    {\r\n      \"date\": \"01.01.2024\",\r\n      \"id\": \"AS012024\",\r\n      \"method\": \"Credit Card\",\r\n      \"amount\": \"400$\",\r\n      \"status\": \"Sent\"\r\n    },\r\n    {\r\n      \"date\": \"01.01.2024\",\r\n      \"id\": \"AS012024\",\r\n      \"method\": \"Credit Card\",\r\n      \"amount\": \"400$\",\r\n      \"status\": \"Sent\"\r\n    },\r\n    {\r\n      \"date\": \"01.01.2024\",\r\n      \"id\": \"AS012024\",\r\n      \"method\": \"Credit Card\",\r\n      \"amount\": \"400$\",\r\n      \"status\": \"Sent\"\r\n    }\r\n  ]\r\n}\r\n"
+								}
+							]
+						},
+						{
+							"name": "Create Invoice",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJ1c2VybmFtZSI6ImFkbWluIiwidHlwZSI6IkFkbWluIiwiaWF0IjoxNzIyNTg1NDg4LCJleHAiOjE3MjI2NzE4ODh9.I3RltcER-y7RZ67KOnYoPveQa5bTKKE-Ex5ZPiigG_M",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"broker_id\": 1,\r\n    \"due_date\": \"2023-12-31\",\r\n    \"details\": \"Annual fee for Client A\",\r\n    \"amount\": 1000.00,\r\n    \"currency\": \"USD\",\r\n    \"status\": \"Sent\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/invoices",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"invoices"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Invoice",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJ1c2VybmFtZSI6ImFkbWluIiwidHlwZSI6IkFkbWluIiwiaWF0IjoxNzIyNTg1NDg4LCJleHAiOjE3MjI2NzE4ODh9.I3RltcER-y7RZ67KOnYoPveQa5bTKKE-Ex5ZPiigG_M",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"broker_id\": 2,\r\n    \"due_date\": \"2023-12-31\",\r\n    \"details\": \"Annual fee for Client A - updated\",\r\n    \"amount\": 1100.00,\r\n    \"currency\": \"USD\",\r\n    \"status\": \"Sent\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/invoices/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"invoices",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Invoice",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/admin/invoices/4",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"invoices",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "Get All Users",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJ1c2VybmFtZSI6ImFkbWluIiwidHlwZSI6IkFkbWluIiwiaWF0IjoxNzIyNTg1NDg4LCJleHAiOjE3MjI2NzE4ODh9.I3RltcER-y7RZ67KOnYoPveQa5bTKKE-Ex5ZPiigG_M",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/admin/users",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"users"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get All Users",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}"
+											}
+										],
+										"url": {
+											"raw": "{{base_url}}/admin/users",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"admin",
+												"users"
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"data\": [\n        {\n            \"id\": 3283,\n            \"name\": \"John Doe\",\n            \"email\": \"Test@Testing.Com\",\n            \"phone\": \"+92323434223\",\n            \"type\": \"Admin\",\n            \"status\": \"Active\",\n            \"profile_picture\": \"path/to/profile_picture.jpg\"\n        },\n        {\n            \"id\": 3283,\n            \"name\": \"John Doe\",\n            \"email\": \"Test@Testing.Com\",\n            \"phone\": \"+92323434223\",\n            \"type\": \"Broker\",\n            \"status\": \"Inactive\",\n            \"profile_picture\": \"path/to/profile_picture.jpg\"\n        },\n        {\n            \"id\": 3283,\n            \"name\": \"John Doe\",\n            \"email\": \"Test@Testing.Com\",\n            \"phone\": \"+92323434223\",\n            \"type\": \"Broker\",\n            \"status\": \"Active\",\n            \"profile_picture\": \"path/to/profile_picture.jpg\"\n        },\n        {\n            \"id\": 3283,\n            \"name\": \"John Doe\",\n            \"email\": \"Test@Testing.Com\",\n            \"phone\": \"+92323434223\",\n            \"type\": \"Broker\",\n            \"status\": \"Active\",\n            \"profile_picture\": \"path/to/profile_picture.jpg\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Create User",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJ1c2VybmFtZSI6ImFkbWluIiwidHlwZSI6IkFkbWluIiwiaWF0IjoxNzIyNTg1NDg4LCJleHAiOjE3MjI2NzE4ODh9.I3RltcER-y7RZ67KOnYoPveQa5bTKKE-Ex5ZPiigG_M",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"John Doe\",\r\n    \"email\": \"test@test.com\",\r\n    \"password\": \"test\",\r\n    \"contact_number\": \"+1234567890\",\r\n    \"type\": \"Broker\",\r\n    \"status\": \"Active\",\r\n    \"profile_picture\": \"profile1.png\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/users",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update User",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Shah\",\r\n    \"email\": \"admin11@admin.com\",\r\n    \"contact_number\": \"+1234567890\",\r\n    \"password\":\"admin\",\r\n    \"type\": \"Admin\",\r\n    \"status\": \"active\",\r\n    \"profile_picture\": \"profile_updated.png\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/users/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"users",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete User",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJ1c2VybmFtZSI6ImFkbWluIiwidHlwZSI6IkFkbWluIiwiaWF0IjoxNzIyNTg1NDg4LCJleHAiOjE3MjI2NzE4ODh9.I3RltcER-y7RZ67KOnYoPveQa5bTKKE-Ex5ZPiigG_M",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/admin/users/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"users",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Support Tickets",
+					"item": [
+						{
+							"name": "Delete Support Ticket",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJ1c2VybmFtZSI6ImFkbWluIiwidHlwZSI6IkFkbWluIiwiaWF0IjoxNzIyNTg1NDg4LCJleHAiOjE3MjI2NzE4ODh9.I3RltcER-y7RZ67KOnYoPveQa5bTKKE-Ex5ZPiigG_M",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/admin/support-tickets/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"support-tickets",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Support Ticket",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJ1c2VybmFtZSI6ImFkbWluIiwidHlwZSI6IkFkbWluIiwiaWF0IjoxNzIyNTg1NDg4LCJleHAiOjE3MjI2NzE4ODh9.I3RltcER-y7RZ67KOnYoPveQa5bTKKE-Ex5ZPiigG_M",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"broker_id\": 1,\r\n    \"issue_category\": \"Technical Issue\",\r\n    \"status\": \"Open\",\r\n    \"initiated_date\": \"2023-05-01\",\r\n    \"response_date\": \"2023-05-02\",\r\n    \"message\": \"Issue with policy details\",\r\n    \"response\": \"Issue with policy details - resolved\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/support-tickets/2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"support-tickets",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Support Tickets",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJ1c2VybmFtZSI6ImFkbWluIiwidHlwZSI6IkFkbWluIiwiaWF0IjoxNzIyNTg1NDg4LCJleHAiOjE3MjI2NzE4ODh9.I3RltcER-y7RZ67KOnYoPveQa5bTKKE-Ex5ZPiigG_M",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/admin/support-tickets",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"support-tickets"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get All Support Tickets",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}"
+											}
+										],
+										"url": {
+											"raw": "{{base_url}}/admin/support_tickets",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"admin",
+												"support_tickets"
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n  \"status\": \"success\",\r\n  \"data\": [\r\n    {\r\n     \"broker_id\": 1,\r\n    \"issue_category\": \"Technical Issue\",\r\n    \"status\": \"Open\",\r\n    \"initiated_date\": \"2023-05-01\",\r\n    \"response_date\": \"2023-05-02\",\r\n    \"message\": \"Issue with policy details\",\r\n    \"response\": \"\"\r\n\r\n    },\r\n    {\r\n     \"broker_id\": 1,\r\n    \"issue_category\": \"Technical Issue\",\r\n    \"status\": \"Open\",\r\n    \"initiated_date\": \"2023-05-01\",\r\n    \"response_date\": \"2023-05-02\",\r\n    \"message\": \"Issue with policy details\",\r\n    \"response\": \"\"\r\n\r\n    },\r\n    {\r\n     \"broker_id\": 1,\r\n    \"issue_category\": \"Technical Issue\",\r\n    \"status\": \"Open\",\r\n    \"initiated_date\": \"2023-05-01\",\r\n    \"response_date\": \"2023-05-02\",\r\n    \"message\": \"Issue with policy details\",\r\n    \"response\": \"\"\r\n    }\r\n  ]\r\n}\r\n"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Home",
+					"item": [
+						{
+							"name": "Homepage Data",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJ1c2VybmFtZSI6ImFkbWluIiwidHlwZSI6IkFkbWluIiwiaWF0IjoxNzIyNTg1NDg4LCJleHAiOjE3MjI2NzE4ODh9.I3RltcER-y7RZ67KOnYoPveQa5bTKKE-Ex5ZPiigG_M",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/admin/homepage-data",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"homepage-data"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Home Data",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{base_url}}/admin/homepage-data",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"admin",
+												"homepage-data"
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"summary\": {\n      \"totalBrokers\": 40,\n      \"totalPremiums\": 89000,\n      \"totalCommission\": 10293,\n      \"totalQuotes\": 93,\n      \"openTickets\": 34\n    },\n    \"topInsurers\": [\n      { \"name\": \"Insurer 1\", \"value\": 38753 },\n      { \"name\": \"Insurer 2\", \"value\": 30000 },\n      { \"name\": \"Insurer 3\", \"value\": 20000 },\n      { \"name\": \"Insurer 4\", \"value\": 10000 },\n      { \"name\": \"Insurer 5\", \"value\": 5000 }\n    ]\n  }\n}\n"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Broker",
+			"item": [
+				{
+					"name": "Home",
+					"item": [
+						{
+							"name": "Homepage Data",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJ1c2VybmFtZSI6ImFkbWluIiwidHlwZSI6IkFkbWluIiwiaWF0IjoxNzIyNzA2ODU1LCJleHAiOjE3MjI3OTMyNTV9.QfkGGTti6T_qrcq1FG_E1KstxI8ExmXv2ucq6TEtD6g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/broker/homepage-data",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"broker",
+										"homepage-data"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Home Data",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{base_url}}/broker/homepage-data",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"broker",
+												"homepage-data"
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"summary\": {\n      \"totalClients\": 40,\n      \"totalPremiums\": 89000,\n      \"totalCommission\": 10293,\n      \"totalQuotes\": 93\n    },\n    \"topInsurers\": [\n      { \"name\": \"Insurer 1\", \"value\": 38753 },\n      { \"name\": \"Insurer 2\", \"value\": 30000 },\n      { \"name\": \"Insurer 3\", \"value\": 20000 },\n      { \"name\": \"Insurer 4\", \"value\": 10000 },\n      { \"name\": \"Insurer 5\", \"value\": 5000 }\n    ]\n  }\n}\n"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Clients",
+					"item": [
+						{
+							"name": "Get All Clients",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJ1c2VybmFtZSI6ImFkbWluIiwidHlwZSI6IkFkbWluIiwiaWF0IjoxNzIyNzA2ODU1LCJleHAiOjE3MjI3OTMyNTV9.QfkGGTti6T_qrcq1FG_E1KstxI8ExmXv2ucq6TEtD6g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/broker/clients",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"broker",
+										"clients"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get All Clients",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}"
+											}
+										],
+										"url": {
+											"raw": "{{base_url}}/broker/clients",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"broker",
+												"clients"
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n  \"status\": \"success\",\r\n  \"data\": [\r\n    {\r\n      \"id\": \"AS012024\",\r\n      \"name\": \"John Doe\",\r\n      \"nationality\": \"Thai\",\r\n      \"insurer\": \"KSLI\",\r\n      \"claim\": \"Submitted\",\r\n      \"status\": \"Active\",\r\n      \"renewal\": \"2 Months\"\r\n    },\r\n    {\r\n      \"id\": \"AS012024\",\r\n      \"name\": \"John Doe\",\r\n      \"nationality\": \"Thai\",\r\n      \"insurer\": \"KSLI\",\r\n      \"claim\": \"Submitted\",\r\n      \"status\": \"Inactive\",\r\n      \"renewal\": \"1 Month\"\r\n\r\n    },\r\n    {\r\n      \"id\": \"AS012024\",\r\n      \"name\": \"John Doe\",\r\n      \"nationality\": \"Thai\",\r\n      \"insurer\": \"KSLI\",\r\n      \"claim\": \"Submitted\",\r\n      \"status\": \"Active\",\r\n      \"renewal\": \"1 Month\"\r\n\r\n    }\r\n  ]\r\n}\r\n"
+								}
+							]
+						},
+						{
+							"name": "Create Client",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJ1c2VybmFtZSI6ImFkbWluIiwidHlwZSI6IkFkbWluIiwiaWF0IjoxNzIyNzA2ODU1LCJleHAiOjE3MjI3OTMyNTV9.QfkGGTti6T_qrcq1FG_E1KstxI8ExmXv2ucq6TEtD6g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"broker_id\": 6,\r\n  \"claim\": \"none\",\r\n  \"status\": \"active\",\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"john@example.com\",\r\n  \"contact_number\": \"+6621234567\",\r\n  \"nationality\": \"Thai\",\r\n  \"date_of_birth\": \"1980-01-01\",\r\n  \"gender\": \"Male\",\r\n  \"country\": \"Thailand\",\r\n  \"address\": \"House 123, 4 Street\",\r\n  \"profile_picture\": \"path/to/profile_picture.jpg\",\r\n  \"verification_id\": \"path/to/verification_id.jpg\",\r\n  \"proof_of_address\": \"path/to/proof_of_address.jpg\",\r\n  \"other_documents\": \"path/to/other_documents.jpg\",\r\n  \"plan_modules\": [\"Inpatient\", \"Outpatient\", \"Dental\", \"Maternity\"],\r\n  \"policy_detail\": {\r\n    \"policy_number\": \"POL123456\",\r\n    \"policy_type\": \"Individual\",\r\n    \"insurer\": \"Insurer A\",\r\n    \"plan_name\": \"Plan A\",\r\n    \"start_date\": \"2023-01-01\",\r\n    \"end_date\": \"2024-01-01\",\r\n    \"area_of_cover\": \"Worldwide\",\r\n    \"currency\": \"USD\",\r\n    \"premium\": 1000.00,\r\n    \"deductibles_or_copay\": \"500\",\r\n    \"payment_method\": \"Credit Card\",\r\n    \"commission\": 200,\r\n    \"payment_frequency\": \"Annual\",\r\n    \"policy_information\": \"path/to/policy_information.jpg\",\r\n    \"invoice\": \"path/to/invoice.jpg\"\r\n  },\r\n  \"members\": [\r\n    {\r\n      \"name\": \"John Doe\",\r\n      \"nationality\": \"Thai\",\r\n      \"date_of_birth\": \"1980-01-01\",\r\n      \"relation\": \"Self\"\r\n    }\r\n  ]\r\n}\r\n"
+								},
+								"url": {
+									"raw": "{{base_url}}/broker/clients",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"broker",
+										"clients"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Client with Policy Details and Members",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJ1c2VybmFtZSI6ImFkbWluIiwidHlwZSI6IkFkbWluIiwiaWF0IjoxNzIyNzA2ODU1LCJleHAiOjE3MjI3OTMyNTV9.QfkGGTti6T_qrcq1FG_E1KstxI8ExmXv2ucq6TEtD6g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"broker_id\": 6,\r\n  \"claim\": \"none\",\r\n  \"status\": \"active\",\r\n  \"name\": \"Sun Doe\",\r\n  \"email\": \"john@example.com\",\r\n  \"contact_number\": \"+6621234567\",\r\n  \"nationality\": \"Thai\",\r\n  \"date_of_birth\": \"1980-01-01\",\r\n  \"sex\": \"Male\",\r\n  \"country\": \"Thailand\",\r\n  \"address\": \"House 123, 4 Street\",\r\n  \"profile_picture\": \"path/to/profile_picture.jpg\",\r\n  \"verification_id\": \"path/to/verification_id.jpg\",\r\n  \"proof_of_address\": \"path/to/proof_of_address.jpg\",\r\n  \"other_documents\": \"path/to/other_documents.jpg\",\r\n  \"plan_modules\": [\"Inpatient\", \"Outpatient\", \"Dental\", \"Maternity\"],\r\n  \"policy_detail\": {\r\n    \"policy_number\": \"POL123456\",\r\n    \"policy_type\": \"Individual\",\r\n    \"insurer\": \"Insurer A\",\r\n    \"plan_name\": \"Plan A\",\r\n    \"start_date\": \"2023-01-01\",\r\n    \"end_date\": \"2024-01-01\",\r\n    \"area_of_cover\": \"Worldwide\",\r\n    \"currency\": \"USD\",\r\n    \"premium\": 1000.00,\r\n    \"deductibles_or_copay\": \"500\",\r\n    \"payment_method\": \"Credit Card\",\r\n    \"commission\": 200,\r\n    \"payment_frequency\": \"Annual\",\r\n    \"policy_information\": \"path/to/policy_information.jpg\",\r\n    \"invoice\": \"path/to/invoice.jpg\"\r\n  },\r\n  \"members\": [\r\n    {\r\n      \"name\": \"sun Doe\",\r\n      \"nationality\": \"Thai\",\r\n      \"date_of_birth\": \"1980-01-01\",\r\n      \"relation\": \"Self\"\r\n    }\r\n  ]\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/broker/clients/7",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"broker",
+										"clients",
+										"7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Client",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJ1c2VybmFtZSI6ImFkbWluIiwidHlwZSI6IkFkbWluIiwiaWF0IjoxNzIyNzA2ODU1LCJleHAiOjE3MjI3OTMyNTV9.QfkGGTti6T_qrcq1FG_E1KstxI8ExmXv2ucq6TEtD6g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/broker/clients/7",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"broker",
+										"clients",
+										"7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Activity",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJ1c2VybmFtZSI6ImFkbWluIiwidHlwZSI6IkFkbWluIiwiaWF0IjoxNzIzNDU1NDg3LCJleHAiOjE3MjM1NDE4ODd9.F1_VQUnOMkTNKlU59sBQ5aHxt8VTzUIgWoGH8e9aMDs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/broker/delete-activity/7",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"broker",
+										"delete-activity",
+										"7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Client Details",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJ1c2VybmFtZSI6ImFkbWluIiwidHlwZSI6IkFkbWluIiwiaWF0IjoxNzIzNDU1NDg3LCJleHAiOjE3MjM1NDE4ODd9.F1_VQUnOMkTNKlU59sBQ5aHxt8VTzUIgWoGH8e9aMDs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/broker/client-detail/6",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"broker",
+										"client-detail",
+										"6"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Client Details",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/broker/client-detail/1",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"broker",
+												"client-detail",
+												"1"
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"claim\": \"none\",\n    \"status\": \"active\",\n    \"name\": \"John Doe\",\n    \"email\": \"john@example.com\",\n    \"contact_number\": \"+6621234567\",\n    \"nationality\": \"Thai\",\n    \"date_of_birth\": \"1980-01-01\",\n    \"gender\": \"Male\",\n    \"country\": \"Thailand\",\n    \"address\": \"House 123, 4 Street\",\n    \"profile_picture\": \"path/to/profile_picture.jpg\",\n    \"verification_id\": \"path/to/verification_id.jpg\",\n    \"proof_of_address\": \"path/to/proof_of_address.jpg\",\n    \"other_documents\": \"path/to/other_documents.jpg\",\n    \"plan_modules\": [\n      \"Inpatient\",\n      \"Outpatient\",\n      \"Dental\",\n      \"Maternity\"\n    ],\n    \"policy_detail\": {\n      \"policy_number\": \"POL123456\",\n      \"policy_type\": \"Individual\",\n      \"insurer\": \"Insurer A\",\n      \"plan_name\": \"Plan A\",\n      \"start_date\": \"2023-01-01\",\n      \"end_date\": \"2024-01-01\",\n      \"area_of_cover\": \"Worldwide\",\n      \"currency\": \"USD\",\n      \"premium\": 1000,\n      \"deductibles_or_copay\": \"500\",\n      \"payment_method\": \"Credit Card\",\n      \"commission\": 200,\n     \"payment_frequency\": \"Annual\",\n     \"policy_information\": \"path/to/policy_information.jpg\",\n     \"invoice\": \"path/to/invoice.jpg\"\n    },\n    \"members\": [\n      {\n        \"name\": \"John Doe\",\n        \"nationality\": \"Thai\",\n        \"date_of_birth\": \"1980-01-01\",\n        \"relation\": \"Self\"\n      }\n    ],\n    \"activities\": [\n    {\n      \"date\": \"2023-01-01\",\n      \"category\": \"Renewal\",\n      \"details\": \"Renewed annual policy\"\n    }\n  ]\n  }\n}\n"
+								}
+							]
+						},
+						{
+							"name": "Create Activity",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJ1c2VybmFtZSI6ImFkbWluIiwidHlwZSI6IkFkbWluIiwiaWF0IjoxNzIzNDU1NDg3LCJleHAiOjE3MjM1NDE4ODd9.F1_VQUnOMkTNKlU59sBQ5aHxt8VTzUIgWoGH8e9aMDs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"client_id\": 6,\r\n  \"date\": \"2024-08-03\",\r\n  \"category\": \"Service\",\r\n  \"details\": \"Discussed policy renewal and benefits.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/broker/create-activity",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"broker",
+										"create-activity"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Quotes",
+					"item": [
+						{
+							"name": "Get All Quotes",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"broker_id\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/broker/get-all-quotes",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"broker",
+										"get-all-quotes"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get All Quotes",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}"
+											}
+										],
+										"url": {
+											"raw": "{{base_url}}/broker/quotes",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"broker",
+												"quotes"
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n  \"status\": \"success\",\r\n  \"data\": [\r\n    {\r\n      \"date\": \"2024-01-01\",\r\n      \"name\": \"John Doe\",\r\n      \"nationality\": \"Thai\",\r\n      \"insurer\": \"KSLI\",\r\n      \"premium\": 23023,\r\n      \"status\": \"Policy Issued\"\r\n    },\r\n    {\r\n      \"date\": \"2024-01-01\",\r\n      \"name\": \"John Doe\",\r\n      \"nationality\": \"Thai\",\r\n      \"insurer\": \"KSLI\",\r\n      \"premium\": 23023,\r\n      \"status\": \"Quote Downloaded\"\r\n    },\r\n    {\r\n      \"date\": \"2024-01-01\",\r\n      \"name\": \"John Doe\",\r\n      \"nationality\": \"Thai\",\r\n      \"insurer\": \"KSLI\",\r\n      \"premium\": 23023,\r\n      \"status\": \"Contacted\"\r\n    },\r\n    {\r\n      \"date\": \"2024-01-01\",\r\n      \"name\": \"John Doe\",\r\n      \"nationality\": \"Thai\",\r\n      \"insurer\": \"KSLI\",\r\n      \"premium\": 23023,\r\n      \"status\": \"Application Sent\"\r\n    },\r\n    {\r\n      \"date\": \"2024-01-01\",\r\n      \"name\": \"John Doe\",\r\n      \"nationality\": \"Thai\",\r\n      \"insurer\": \"KSLI\",\r\n      \"premium\": 23023,\r\n      \"status\": \"Policy Issued\"\r\n    }\r\n  ]\r\n}\r\n"
+								}
+							]
+						},
+						{
+							"name": "Create Quote with Members",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"broker_id\": 1,\r\n    \"name\": \"Quote A\",\r\n    \"email\": \"lead.a@example.com\",\r\n    \"contact_number\": \"+123123123\",\r\n    \"nationality\": \"American\",\r\n    \"age\": 35,\r\n    \"country\": \"USA\",\r\n    \"currency\": \"USD\",\r\n    \"premium\": 1200.00,\r\n    \"deductibles_or_copay\": \"600\",\r\n    \"plan_modules\": [\"Inpatient\", \"Outpatient\", \"Dental\", \"Maternity\"],\r\n    \"area_of_cover\": \"Worldwide\",\r\n    \"plan_name\": \"Plan B\",\r\n    \"insurer\": \"Insurer B\",\r\n    \"status\": \"Contacted\",\r\n    \"members\": [\r\n        {\r\n            \"name\": \"Member A\",\r\n            \"nationality\": \"American\",\r\n            \"age\": 10,\r\n            \"relation\": \"Child\"\r\n        }\r\n    ]\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/broker/quotes",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"broker",
+										"quotes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Quote",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"broker_id\": 1,\r\n    \"status\": \"Application Sent\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/broker/quotes/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"broker",
+										"quotes",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Quote",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/broker/quotes/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"broker",
+										"quotes",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Quote Details",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/broker/quotes-detail/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"broker",
+										"quotes-detail",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Quote Details",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/broker/quotes-detail/1",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"broker",
+												"quotes-detail",
+												"1"
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"client_info\": {\n            \"name\": \"John Doe\",\n            \"email\": \"Test@gmail.com\",\n            \"phone\": \"+923065949602\",\n            \"nationality\": \"Thai\",\n            \"age\": \"34 Years\",\n            \"country\": \"Thailand\",\n            \"currency\": \"USD\"\n        },\n        \"policy_detail\": {\n            \"plan_modules\": [\n                \"Inpatient\",\n                \"Outpatient\",\n                \"Dental\",\n                \"Maternity\"\n            ],\n            \"area_of_cover\": \"Worldwide\",\n            \"plan_name\": \"Connect\",\n            \"insurer\": \"VUMI\",\n            \"premium\": 3042,\n            \"deductibles_or_copay\": 500\n        },\n        \"members\": [\n            {\n                \"name\": \"John Doe\",\n                \"nationality\": \"Pakistani\",\n                \"age\": \"10 Years\",\n                \"relation\": \"Child\"\n            },\n            {\n                \"name\": \"John Doe\",\n                \"nationality\": \"Pakistani\",\n                \"age\": \"10 Years\",\n                \"relation\": \"Child\"\n            }\n        ]\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Support Tickets",
+					"item": [
+						{
+							"name": "Create Support Ticket",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"broker_id\": 1,\r\n    \"issue_category\": \"Technical Issue\",\r\n    \"status\": \"Open\",\r\n    \"initiated_date\": \"2023-05-01\",\r\n    \"response_date\": \"2023-05-02\",\r\n    \"message\": \"Issue with policy details\",\r\n    \"response\": \"\"\r\n\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/broker/support-tickets",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"broker",
+										"support-tickets"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Support Tickets",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"broker_id\": 1\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/broker/support-tickets",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"broker",
+										"support-tickets"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Support Ticket",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"broker_id\": 1,\r\n    \"issue_category\": \"Technical Issue\",\r\n    \"status\": \"Open\",\r\n    \"initiated_date\": \"2023-05-01\",\r\n    \"response_date\": \"2023-05-02\",\r\n    \"message\": \"Issue with policy details\",\r\n    \"response\": \"Solved\"\r\n\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/broker/support-tickets/3",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"broker",
+										"support-tickets",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Support Ticket",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/broker/support-tickets/3",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"broker",
+										"support-tickets",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.variables.set('base_url', 'http://localhost:3000');"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test('Status code is 200', function () {",
+					"    pm.response.to.have.status(200);",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJ1c2VybmFtZSI6ImFkbWluIiwidHlwZSI6IkFkbWluIiwiaWF0IjoxNzIyODMwMDM2LCJleHAiOjE3MjI5MTY0MzZ9.glGjyU4rv170upIQaxdv9PyOXsm4WJV_gTIH3Be3JCQ"
+		},
+		{
+			"key": "email",
+			"value": "admin@admin.com"
+		},
+		{
+			"key": "password",
+			"value": "admin123"
+		}
+	]
+}
